@@ -4,14 +4,12 @@ import { capitalize, getEvent } from "@/lib/utils";
 import { Metadata } from "next";
 
 // Event Page Props declaration
-type EventPageProps = {
-  params: {
+type EventPageProps = Promise<{
     slug: string;
-  };
-};
+}>;
 
-export default async function EventPage({ params }: EventPageProps) {
-  const slug = params.slug;
+export default async function EventPage({ params }: { params: EventPageProps }) {
+  const { slug } = await params;
   const event = await getEvent(slug);
   return (
     <main>
@@ -69,10 +67,8 @@ export default async function EventPage({ params }: EventPageProps) {
 }
 
 // Generate Metadata based on slug
-export async function generateMetadata({
-  params,
-}: EventPageProps): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({ params }: { params: EventPageProps }): Promise<Metadata> {
+  const { slug } = await params;
   const event = await getEvent(slug);
   return {
     title: capitalize(event.name),
