@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hometown Happenings
 
-## Getting Started
+### Description:
 
-First, run the development server:
+Hometown Happenings is a project created because of the need for a modern event-listing site serving smaller communities in Minnesota.  In having an easily-searchable and navigable site for local events, I hope to make it easier for community members to find activities that interest them, and hopefully connect with others who share the same interests.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hometown Happenings is built using the NextJS framework, with an sqlite database for development and the prisma ORM to interact with the database.  Tailwind is used to handle CSS styling, framermotion is ued to provide reactive modern styling, and zod is used for validation of availabe pages.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Users are initially presented with a search form to narrow event results down to specific cities, they are also able to use the sitewite navigation bar to view all events.  Links to popular cities are listed underneath the searchbar for immediate access.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The events list page is filled with 6 cards for events listed in order of date, each displaying basic information for the events with a picture to represent them.  These event cards are reactive to scrolling via framermotion, and will change size as they come into view.  After clicking on an event, the user is presented with the event page where the date, organizer, location, and full description of the event are displayed.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Future improvements to the Hometown Happenings app include sorting events by categories, a login feature where users can save events, an automated email sent weekly to remind users of upcoming events, and being able to save a city as a default.
