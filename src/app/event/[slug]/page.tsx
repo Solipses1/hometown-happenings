@@ -10,7 +10,7 @@ type EventPageProps = {
   };
 };
 
-export default async function EventPage({ params }: EventPageProps) {
+export default async function EventPage({ params }: EventPageProps): Promise<unknown> {
   const slug = params.slug;
   const event = await getEvent(slug);
   return (
