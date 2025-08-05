@@ -75,15 +75,3 @@ export async function generateMetadata({ params }: { params: EventPageProps }): 
     description: event.description,
   };
 }
-
-// Statically enerate popular page routes
-export async function generateStaticParams() {
-  return [
-    {
-      slug: "tractor-pull",
-    },
-    {
-      slug: "book-sale",
-    },
-  ];
-}
